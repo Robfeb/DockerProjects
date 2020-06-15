@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+      vstsagent:
+            isolation: process
+            image: "buildserver:latest"
+            environment:
+                  - AZP_AGENT_NAME=<machineName>
+                  - AZP_POOL=<DockerPool>
+                  - AZP_URL=https://<yourTenant>.visualstudio.com
+                  - AZP_TOKEN=<token>
+                  - AZP_WORK=c://azp
+networks:
+      default:
+            external:
+                  name: nat
+                  
+                  
+                  
+                  
